@@ -134,10 +134,10 @@
                     contentType: 'application/json',
                     data: JSON.stringify(formData),
                     success: function(response) {
-                        $('#results').append(<p>${response.message}</p>);
+                        $('#results').append(`<p>${response.message}</p>`);
                     },
                     error: function(xhr) {
-                        $('#results').append(<p>${xhr.responseJSON.error}</p>);
+                        $('#results').append(`<p>${xhr.responseJSON.error}</p>`);
                     }
                 });
             });
@@ -146,17 +146,17 @@
             $('#get-top-students').on('click', function() {
                 const yearInput = $('#year-input').val();
                 $.ajax({
-                    url: /get_top_students/${yearInput},
+                    url: `/get_top_students/${yearInput}`,
                     method: 'GET',
                     success: function(data) {
                         $('#results').empty();
                         data.forEach(student => {
-                            $('#results').append(<p>${student.student_name} - Score: ${student.Score}</p>);
+                            $('#results').append(`<p>${student.student_name} - Score: ${student.Score}</p>`);
                         });
                     },
                     error: function(xhr) {
                         $('#results').empty();
-                        $('#results').append(<p>${xhr.responseJSON.error}</p>);
+                        $('#results').append(`<p>${xhr.responseJSON.error}</p>`);
                     }
                 });
             });
@@ -169,12 +169,12 @@
                     success: function(data) {
                         $('#results').empty();
                         data.forEach(student => {
-                            $('#results').append(<p>${student.student_name} (${student.academic_year})</p>);
+                            $('#results').append(`<p>${student.student_name} (${student.academic_year})</p>`);
                         });
                     },
                     error: function(xhr) {
                         $('#results').empty();
-                        $('#results').append(<p>${xhr.responseJSON.error}</p>);
+                        $('#results').append(`<p>${xhr.responseJSON.error}</p>`);
                     }
                 });
             });
