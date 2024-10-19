@@ -23,7 +23,7 @@
         }
 
         h1 {
-            color: #FFD700; /* Changed color of main heading to gold */
+            color: #FFD700;
         }
 
         button {
@@ -33,8 +33,8 @@
             padding: 10px 15px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-family: 'Roboto', sans-serif; /* Changed font for buttons */
-            font-weight: 500; /* Added font weight for better readability */
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
         }
 
         button:hover {
@@ -49,8 +49,8 @@
             margin: 10px auto;
             text-align: center;
             max-width: 400px;
-            background-color: #1a3a5a; /* Changed background color for forms */
-            padding: 20px; /* Added padding for better appearance */
+            background-color: #1a3a5a; 
+            padding: 20px;
         }
 
         input {
@@ -120,7 +120,7 @@
 
     <script>
         $(document).ready(function() {
-            // Add Student
+    
             $('#add-student-form').on('submit', function(event) {
                 event.preventDefault();
                 const formData = $(this).serializeArray().reduce((obj, item) => {
@@ -142,7 +142,6 @@
                 });
             });
 
-            // Get Top Students
             $('#get-top-students').on('click', function() {
                 const yearInput = $('#year-input').val();
                 $.ajax({
@@ -161,7 +160,6 @@
                 });
             });
 
-            // View All Students
             $('#view-all-students').on('click', function() {
                 $.ajax({
                     url: '/view_all_students',
