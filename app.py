@@ -6,13 +6,11 @@ from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
 
-# Connect to SQLite database (it will create if it doesn't exist)
 def get_db_connection():
     conn = sqlite3.connect('student_recognition.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-# Initialize the database and create the 'students' table if it doesn't exist
 def create_students_table():
     conn = get_db_connection()
     conn.execute('''
@@ -116,5 +114,5 @@ def view_all_students():
     return jsonify(result)
 
 if __name__ == '__main__':
-    create_students_table()  # Create the table when starting the app
+    create_students_table()
     app.run(debug=True)
